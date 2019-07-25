@@ -6,7 +6,7 @@ import { Directive, Input, ElementRef, HostListener, Renderer2 } from '@angular/
 export class TooltipDirective {
   @Input('tooltip') tooltipTitle: string;
   @Input() placement: string;
-  @Input() delay: string;
+  @Input() delay: number;
   tooltip: HTMLElement;
 
   offset = 10;
@@ -36,11 +36,13 @@ export class TooltipDirective {
   }
 
   hide() {
-    this.renderer.removeClass(this.tooltip, 'ng-tooltip-show');
-    window.setTimeout(() => {
-      this.renderer.removeChild(document.body, this.tooltip);
-      this.tooltip = null;
-    }, this.delay);
+    if(this.tooltip !== null){
+      this.renderer.removeClass(this.tooltip, 'ng-tooltip-show');
+      window.setTimeout(() => {
+        this.renderer.removeChild(document.body, this.tooltip);
+        this.tooltip = null;
+      }, this.delay);
+    }
   }
 
   create() {
