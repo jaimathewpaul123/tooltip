@@ -1,0 +1,45 @@
+.ng-tooltip
+  position: absolute
+  max-width: 150px
+  font-size: 14px
+  text-align: center
+  color: #f8f8f2
+  padding: 3px 8px
+  background: #282a36
+  border-radius: 4px
+  z-index: 1000
+  opacity: 0
+.ng-tooltip:after
+  content: ""
+  position: absolute
+  border-style: solid
+
+.ng-tooltip-top:after
+      top: 100%
+      left: 50%
+      margin-left: -5px
+      border-width: 5px
+      border-color: black transparent transparent transparent
+.ng-tooltip-show
+      opacity: 1
+
+.main-container
+  width: 45%
+  margin: 0 auto
+  border: 1px solid #d1d1d1
+  header
+    padding: 20px 20px
+    background-color: #3871f1
+    font-size: 28px
+    color:#fff
+  .tooltip-div
+    display: flex
+    margin: 50px 0
+    justify-content: space-around
+    button
+      padding: 12px 30px
+      box-shadow: none
+      border: none
+      color: #fff
+      cursor: pointer
+      background-color: #3871f1
